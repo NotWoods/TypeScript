@@ -5488,11 +5488,11 @@ declare var DOMSettableTokenList: {
     new(): DOMSettableTokenList;
 }
 
-interface DOMStringList {
-    length: number;
-    contains(str: string): boolean;
-    item(index: number): string;
-    [index: number]: string;
+interface DOMStringList<T extends string = string> {
+    readonly length: number;
+    contains(str: T): boolean;
+    item(index: number): T;
+    [index: number]: T;
 }
 
 declare var DOMStringList: {
